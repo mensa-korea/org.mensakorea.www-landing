@@ -67,7 +67,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdro
   grid-template-areas:
     "adm adm adm adm adm com com com com onl onl onl"
     "adm adm adm adm adm com com com com aca aca aca"
-    "sto sto sto intl intl intl kids kids kids cmp cmp cmp"}
+    "sto sto sto intl intl intl kids kids kids cmp cmp cmp"
+    "jnl jnl jnl jnl jnl jnl jnl jnl jnl jnl jnl jnl"}
 .bx{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:14px;
   min-height:150px;padding:clamp(18px,2vw,26px);border-radius:22px;overflow:hidden;isolation:isolate;
   border:1px solid rgba(21,20,29,.07);
@@ -145,11 +146,12 @@ footer .wm{position:absolute;right:-60px;bottom:-70px;width:280px;opacity:.05;fi
   .bento{grid-template-areas:
     "adm adm adm com com com"
     "onl onl aca aca sto sto"
-    "intl intl kids kids cmp cmp";grid-template-columns:repeat(6,1fr)}
+    "intl intl kids kids cmp cmp"
+    "jnl jnl jnl jnl jnl jnl";grid-template-columns:repeat(6,1fr)}
 }
 @media(max-width:760px){
       .bg-viz.go{opacity:.38}
-  .bento{grid-template-areas:"adm" "com" "onl" "aca" "sto" "intl" "kids" "cmp";grid-template-columns:1fr}
+  .bento{grid-template-areas:"adm" "com" "onl" "aca" "sto" "intl" "kids" "cmp" "jnl";grid-template-columns:1fr}
   .bx{min-height:132px}
   .steps{grid-template-columns:1fr}
   .ft-links .sns{margin-left:0}
@@ -401,6 +403,29 @@ a.b-intl:hover .ar{background:#fff;color:var(--ink)}
 a.b-intl:hover h2{color:#fff}
 a.b-intl:hover .bx-top{color:rgba(255,255,255,.96)}
 a.b-intl:hover .bx-top .no{color:#fff}
+
+/* ── 회지 배너(09): 벤토 아래 전폭 매거진 카드 ── */
+.b-jnl{grid-area:jnl;flex-direction:row;align-items:center;gap:22px;min-height:92px;
+  background:rgba(234,240,249,.72)}
+.b-jnl .bx-top{flex:0 0 auto;gap:10px}
+.b-jnl .jnl-tx{display:flex;align-items:baseline;gap:14px;min-width:0}
+.b-jnl h2{white-space:nowrap}
+.b-jnl p{max-width:none}
+.b-jnl .bx-bot{margin-left:auto}
+.b-jnl .wm-ic{right:9%;bottom:auto;top:50%;width:96px;height:96px;
+  transform:translateY(-46%) rotate(-6deg)}
+a.b-jnl:hover .wm-ic{transform:translateY(-46%) rotate(2deg) scale(1.12)}
+@media(max-width:860px){.b-jnl .wm-ic{right:64px}}
+@media(max-width:760px){
+  .b-jnl{flex-direction:column;align-items:stretch;gap:14px;min-height:132px}
+  .b-jnl .jnl-tx{display:block}
+  .b-jnl h2{white-space:normal}
+  .b-jnl .bx-bot{margin-left:0}
+  .b-jnl .wm-ic{top:auto;bottom:-14px;right:-10px;transform:translate(10px,10px) rotate(-6deg)}
+  a.b-jnl:hover .wm-ic{transform:none}
+}
+
+.ft-links .sns+.sns{margin-left:0}
 </style>
 </head>
 <body>
@@ -568,6 +593,13 @@ a.b-intl:hover .bx-top .no{color:#fff}
         <div><h2>멘사코리아 대회</h2><p>지난 대회 기록과 다음 대회 안내</p></div>
         <div class="bx-bot"><span class="ar" aria-hidden="true">→</span></div>
         <svg class="wm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5.2a4 4 0 01-8 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 5.4H5a2.6 2.6 0 002.6 3.9M16 5.4h3a2.6 2.6 0 01-2.6 3.9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 13.2v3M9 19.6h6M10 16.2h4l.7 3.4H9.3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a class="bx b-jnl rv" style="--i:8" href="https://journal.mensa.kr/?utm_source=web&utm_medium=landing&utm_campaign=mkj_latest" target="_blank" rel="noopener">
+        <div class="bx-top"><span>JOURNAL</span><span class="no num">09</span></div>
+        <div class="jnl-tx"><h2>회지 보기</h2><p>멘사코리아 회지 최신호</p></div>
+        <div class="bx-bot"><span class="ar" aria-hidden="true">→</span></div>
+        <svg class="wm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.4C10.4 5 8 4.4 4.6 4.4v13c3.4 0 5.8.6 7.4 2 1.6-1.4 4-2 7.4-2v-13c-3.4 0-5.8.6-7.4 2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 6.4v13" stroke="currentColor" stroke-width="1.5"/><path d="M7.1 8.6c1.8.1 3.2.5 4.9 1.4M7.1 11.6c1.8.1 3.2.5 4.9 1.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".7"/></svg>
       </a></nav>
   </div>
 </section>
@@ -580,6 +612,8 @@ a.b-intl:hover .bx-top .no{color:#fff}
   <div class="wrap">
     <div class="ft-links">
       <a href="https://mensa.kr/bbs/write.php?bo_table=bugreport" target="_blank" rel="noopener">홈페이지 버그신고</a>
+      <a class="sns kakao" href="https://pf.kakao.com/_Rixexnn" target="_blank" rel="noopener" aria-label="멘사코리아 카카오톡 채널">
+        <svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C6.9 4 2.8 7.2 2.8 11.2c0 2.6 1.7 4.8 4.3 6.1l-.9 3.4c-.1.3.3.6.6.4l4-2.7c.4 0 .8.1 1.2.1 5.1 0 9.2-3.2 9.2-7.2S17.1 4 12 4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>카카오톡 채널</span></a>
       <a class="sns" href="https://www.instagram.com/mensa_kr/" target="_blank" rel="noopener" aria-label="멘사코리아 인스타그램">
         <svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg><span class="num">@mensa_kr</span></a>
     </div>
@@ -679,7 +713,7 @@ a.b-intl:hover .bx-top .no{color:#fff}
   var M=[
     ['.hd .cta','Take the Test'],
     ['#dirTitle','Where <em class=\"hl2\">the top 2%</em> meet,<br><em class=\"hlk\">Mensa Korea</em>'],
-    ['.dir-desc','<span>Founded in Oxford in 1946, Mensa is an international society for people of high intelligence.</span><span>Membership is open to the top 2% on a supervised IQ test \u2014 about 150,000 members across 100+ countries.</span>'],
+    ['.dir-desc','<span>Founded in Oxford in 1946, Mensa is an international society for people of high intelligence.</span><span>Membership is open to the top 2% on a supervised IQ test, with about 150,000 members across 100+ countries.</span>'],
     ['.b-com h2','Member Community'],
     ['.b-com p','The members-only community of Mensa Korea'],
     ['.b-adm h2','Admission Test'],
@@ -693,8 +727,11 @@ a.b-intl:hover .bx-top .no{color:#fff}
     ['.b-intl h2','Mensa International'],
     ['.b-intl p','The worldwide Mensa network'],
     ['.b-kids p','Learning content for kids and teens'],
+    ['.b-jnl h2','Journal'],
+    ['.b-jnl p','Read the latest issue of the Mensa Korea journal'],
     ['.b-cmp h2','Mensa Korea Games'],
     ['.b-cmp p','Past results and the next competition'],
+    ['.ft-links .kakao span','KakaoTalk'],
     ['.ft-links a[href*="bugreport"]','Report a bug']
   ];
   var cur="ko";
